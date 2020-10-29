@@ -80,7 +80,7 @@ def writer(datasets, dataset_names, output_dir):
     for dataset, dataset_name in zip(datasets, dataset_names):
         if dataset:
             filepath = output_dir + '/' + dataset_name + '.txt'
-            with open(filepath, 'w+') as out_file:
+            with open(filepath, 'a+') as out_file:
                 joined = '\n'.join(dataset)
                 out_file.write(str(joined.encode('utf-8').decode('utf-8')))
                 out_file.write('\n')
