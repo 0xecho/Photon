@@ -220,6 +220,8 @@ def intel_extractor(url, response):
 def js_extractor(response):
     """Extract js files from the response body"""
     # Extract .js files
+    response = response.lower().replace("</script>","</script>\n")
+    # print(response)
     matches = rscript.findall(response)
     for match in matches:
         match = match[2].replace('\'', '').replace('"', '')
